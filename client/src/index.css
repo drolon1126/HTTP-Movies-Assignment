@@ -53,15 +53,24 @@ body {
   width: 75%;
   margin: 1rem auto;
 }
-.save-button {
+.save-button, .edit-button, .delete-button {
   position: absolute;
   top: 25px;
   right: 25px;
+  width: 50px;
   border: 1px solid grey;
   padding: 5px 10px;
   background-color: lightseagreen;
 }
-.save-button:hover {
+.delete-button{
+  top:125px;
+}
+.edit-button{
+  top:75px;
+  text-decoration: none;
+  color: black;
+}
+.save-button:hover, .edit-button:hover, .delete-button:hover {
   background-color: green;
   color: white;
 }
@@ -74,4 +83,18 @@ body {
 .movie-warning {
   color: red;
   text-align: center;
+}
+
+.movieForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
+  margin: 1rem auto;
+}
+
+.input{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
