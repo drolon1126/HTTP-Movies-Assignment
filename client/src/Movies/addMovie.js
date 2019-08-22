@@ -43,7 +43,7 @@ const AddMovie = props => {
   return(
     <form className='movieForm' onSubmit={handleSubmit}>
       <div className='input'>
-        <label for='title'>Title: </label>
+        <label htmlFor='title'>Title: </label>
         <input
           type='text'
           name='title'
@@ -53,7 +53,7 @@ const AddMovie = props => {
         />
       </div>
       <div className='input'>
-      <label for='director'>Director: </label>
+      <label htmlFor='director'>Director: </label>
         <input
           type='text'
           name='director'
@@ -63,7 +63,7 @@ const AddMovie = props => {
         />
       </div>
       <div className='input'>
-      <label for='metascore'>Metascore: </label>
+      <label htmlFor='metascore'>Metascore: </label>
         <input
           type='number'
           name='metascore'

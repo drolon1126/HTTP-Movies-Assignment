@@ -10,7 +10,7 @@ const UpdateMovie = props => {
       .then(res => {
         console.log('test', res)
         //setEdit(res.data)
-        setEdit({ ...res.data, id: id });
+        setEdit(res.data);
       })
       .catch(err => console.log(err.response));
   };
@@ -52,7 +52,7 @@ const UpdateMovie = props => {
   return (
     <form className='movieForm' onSubmit={handleSubmit}>
       <div className='input'>
-        <label for='title'>Title: </label>
+        <label htmlFor='title'>Title: </label>
         <input
           type='text'
           name='title'
@@ -62,7 +62,7 @@ const UpdateMovie = props => {
         />
       </div>
       <div className='input'>
-      <label for='director'>Director: </label>
+      <label htmlFor='director'>Director: </label>
         <input
           type='text'
           name='director'
@@ -72,7 +72,7 @@ const UpdateMovie = props => {
         />
       </div>
       <div className='input'>
-      <label for='metascore'>Metascore: </label>
+      <label htmlFor='metascore'>Metascore: </label>
         <input
           type='number'
           name='metascore'
