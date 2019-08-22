@@ -31,7 +31,8 @@ const AddMovie = props => {
     axios
     .post(`http://localhost:5000/api/movies/`, edit)
     .then(res=>{
-      console.log(res);
+      console.log('add',res);
+      props.setMovies(res.data);
       setEdit({id:0, title:'',director:'',metascore:0,stars:[]});
       props.history.push('/');
 

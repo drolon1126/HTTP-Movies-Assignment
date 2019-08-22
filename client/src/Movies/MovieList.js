@@ -6,14 +6,13 @@ export default class MovieList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movies: []
     };
   }
 
   componentDidMount() {
     axios
       .get("http://localhost:5000/api/movies")
-      .then(res => this.setState({ movies: res.data }))
+      .then(res => this.props.setMovies(res.data))
       .catch(err => console.log(err.response));
   }
 
@@ -21,7 +20,7 @@ export default class MovieList extends Component {
     return (
       <div className="movie-list">
         <Link to='/add-movie'>Add Movie </Link>
-        {this.state.movies.map(movie => (
+        {this.props.movies.map(movie => (
           <MovieDetails key={movie.id} movie={movie} />
         ))}
       </div>

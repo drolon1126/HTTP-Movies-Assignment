@@ -34,7 +34,14 @@ const UpdateMovie = props => {
     axios
       .put(`http://localhost:5000/api/movies/${props.match.params.id}`, edit)
       .then(res => {
-        console.log(res);
+        console.log('edit',res);
+        let tmp = props.movies.map(movie=>{
+          if(`${movie.id}`===props.match.params.id){
+            return res.data;
+          } else {
+            return movie;
+          }
+        })
         setEdit({ id: 0, title: '', director: '', metascore: 0, stars: [] });
         props.history.push('/');
 
