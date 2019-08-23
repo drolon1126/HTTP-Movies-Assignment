@@ -43,6 +43,7 @@ const UpdateMovie = props => {
           }
         })
         setEdit({ id: 0, title: '', director: '', metascore: 0, stars: [] });
+        props.setMovies(tmp);
         props.history.push('/');
 
       })
